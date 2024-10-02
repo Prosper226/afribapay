@@ -9,7 +9,7 @@ $oper = new AfribaPAY('sandbox');
 
 // print_r($oper->listPays());
 // print_r($oper->infos());
-// print_r($oper->status('order-1727898854'));
+// print_r($oper->status('order-1727911270'));
 // print_r($oper->balance());
 // print_r($oper->history('2008-12-10', '2024-12-10'));
 
@@ -36,8 +36,8 @@ $payOutData = [
 ];
 // print_r($oper->payOut($payOutData));
 
-// listPays = $oper->listPays();
-// print_r($oper->paysCurrencies($listPays));
+// $listPays = $oper->listPays();
+// print_r($oper->paysListDeroulante($listPays));
 // print_r($oper->paysCurrencies($listPays, "CD"));
 // print_r($oper->paysOperateurs($listPays, "BF", "XOF"));
 

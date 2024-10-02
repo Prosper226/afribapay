@@ -263,7 +263,6 @@ class ServiceImpl implements ServiceInterface {
         try {
             $this->logger->info('paysListDeroulante method called');
             $countries = [];
-            
             foreach ($data['content']['data'] as $country) {
                 $countries[] = [
                     'country_code' => $country['country_code'],
@@ -284,7 +283,7 @@ class ServiceImpl implements ServiceInterface {
                 $currencies = array_keys($data['content']['data'][$countryCode]['currencies']);
                 return $currencies;
             } else {
-                return "Le pays spécifié n'existe pas dans les données.";
+                throw new Exception("Le pays spécifié n'existe pas dans les données.");
             }
         } catch (Exception $e) {
             $this->errorLogger->error('Error in paysCurrencies method: ' . $e->getMessage());
@@ -299,7 +298,7 @@ class ServiceImpl implements ServiceInterface {
                 $operators = $data['content']['data'][$countryCode]['currencies'][$currencyCode]['operators'];
                 return $operators;
             } else {
-                return "Le pays ou la monnaie spécifié n'existe pas dans les données.";
+                throw new Exception("Le pays ou la monnaie spécifié n'existe pas dans les données.");
             }
         } catch (Exception $e) {
             $this->errorLogger->error('Error in paysOperateurs method: ' . $e->getMessage());

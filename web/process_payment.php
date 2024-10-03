@@ -12,12 +12,8 @@
             'currency' => $_POST['currency']
         ];
         $payIn = $oper->payIn($payInData);
-        echo "<pre>"; 
-        print_r($payIn);
-        echo "</pre>";
-        echo '<a href="form_payment.php">Retour au formulaire</a>';
-    } else {
-        header("Location: form_payment.php");
+        header('Content-Type: application/json');
+        echo json_encode($payIn);
         exit();
     }
 

@@ -9,7 +9,7 @@ $oper = new AfribaPAY('sandbox');
 
 // print_r($oper->listPays());
 // print_r($oper->infos());
-// print_r($oper->status('order-1727911270'));
+// print_r($oper->status('order-1727915532'));
 // print_r($oper->balance());
 // print_r($oper->history('2008-12-10', '2024-12-10'));
 
